@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <link rel="stylesheet" href="estilo3.css">
+    <script>
+        function calc_total(){
+            var qtd = parseInt(document.getElementById('cqua').value);
+            tot = qtd * 1500;
+            document.getElementById('cpre').value = tot;
+        }
+    </script>
+</head>
+
+<body style="background-color: rgba(55,0,0,.3)">
+    <a href="http://www.paulomourao.tk" target="_blank">minha pagina</a>
+    <p style="text-align: center"><img id="imagem" src="formulario.png"></p>
+    <div id="tv-radio">
+        <audio id="musica" controls='controls'>
+            <source src="15%20-%20Forest.mp3" type="audio/mp3">
+        </audio>
+        <!---
+        <video id="videos" controls='controls'>
+            <source src="vid.mp4" type="video/mp4" >
+        </video>
+        -->
+    </div>
+    <iframe style="float: right" width="500" height="300" src="https://www.youtube.com/embed/metoFY-x_yg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <h1 style="text-align: center;font-family: serif;color: blue;text-shadow: 2px 2px 3px #000000">Formulario</h1>
+<form method="post" id="fcontato" action="pablo7833@gmail.com" oninput="calc_total();">
+    <fieldset id="usuario"><legend>identificacao do usuario</legend>
+        <p>Nome:<input type="text" name="tname" id="cname" size="20" maxlength="30" placeholder="nome completo"></p>
+        <p>Senha:<input type="password" name="tsenha" id="csenha" size="10" maxlength="8" placeholder="8-caracteres"></p>
+        <p>Email:<input type="email" name="tmail" id="cmail" size="20" maxlength="40" placeholder="digite seu email"></p>
+    </fieldset>
+    <fieldset id="sexo"><legend>Sexo</legend>
+        <input type=radio name="tsexo" id="cmas"><label for="cmas">Masculino</label><br>
+        <input type="radio" name="tsexo" id="cfem"><label for="cfem">Feminino</label>
+    </fieldset>
+    <p>Data de Nascimento:<input type="date" name="tnasc" id="cnasc"></p>
+    <fieldset id="end"><legend>Endereco</legend>
+        <p>Logradouro:<input type="text" name="tlog" id="clog" size="13" maxlength="80" placeholder="rua avenida travessa"></p>
+        <p>Numero:<input type="number" name="tnam" id="cnam" min="0" max="99999"></p>
+        <p><label for="cest">Estado:</label>
+        <select name="test" id="cest">
+            <optgroup label="regiao nordeste">
+                <option value="pe">Pernanbuco</option>
+                <option value="ba">Bahia</option>
+                <option value="ce" selected>Ceara</option>
+                <option value="pi">Piaui</option>
+                <option value="ma">Manaus</option>
+            </optgroup>
+            <optgroup label="regiao sul">
+                <option value="pa">parana</option>
+                <option value="st">santa catarina</option>
+                <option value="rg">rio grande do sul</option>
+            </optgroup>
+        </select></p>
+        <p><label for="ccid">Cidade:</label>
+        <input type="text" name="tcid" id="ccid" size="20" maxlength="40" placeholder="sua cidade" list="cidades"></p>
+        <datalist id="cidades">
+            <option value="fortaleza"></option>
+            <option value="salvador"></option>
+            <option value="bom jesus"></option>
+        </datalist>
+    </fieldset>
+    <fieldset id="mensagem"><legend>Mensagem do Usuario</legend>
+        <p><label for="curg">Grau de Urgencia:</label>
+        min<input type="range" name="turg" id="curg" min="0" max="10" step="2">max</p>
+        <p><label for="cmsg">Mensagem:</label></p><textarea name="tmsg" id="cmsg" cols="35" rows="5" placeholder="digite sua mensagem"></textarea>
+    </fieldset>
+    <fieldset id="quero"><legend>Quero um Formulario</legend>
+        <p><input type="checkbox" name="tped" id="cped" checked>
+        <label for="cped">Gostaria de adiquirir um Formulario</label></p>
+        <p><label for="ccor">Cor:</label><input type="color" name="tcor" id="ccor" value="#000000"></p>
+        <p><label for="cqua">Quantidade:</label><input type="number" name="tqua" id="cqua" min="0" max="5" value="0"></p>
+        <p><label for="cpre">Preco Total R$:</label><input type="text" name="tpre" id="cpre" readonly placeholder="total a pagar"></p>
+    </fieldset>
+    <input type=image name="tenv" src="enviar.png">
+    <footer>
+        <h3>CONCLUÍDO.</h3>
+    </footer>
+</form>
+</body>
+</html>
